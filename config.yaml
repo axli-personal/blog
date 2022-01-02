@@ -1,6 +1,6 @@
-baseURL: "http://localhost:1313/"
-title: "Osung Li | Blog"
-copyright: "2021 @ Osung Li"
+baseURL: "https://blog.axlis.cn"
+title: "AoXiang Li | Blog"
+copyright: "2021 @ AoXiang Li"
 
 summaryLength: 30
 hasCJKLanguage: true
