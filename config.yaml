@@ -1,0 +1,23 @@
+baseURL: "http://localhost:1313/"
+title: "Osung Li | Blog"
+copyright: "2021 @ Osung Li"
+
+summaryLength: 30
+hasCJKLanguage: true
+paginate: 5
+
+params:
+  favicon: "/favicon.jpg"
+  social:
+    - name: "GitHub"
+      icon: "github"
+      url: "https://github.com/osung-li"
+  nav:
+    - name: "Posts"
+      url: "/posts"
+    - name: "Tags"
+      url: "/tags"
+    - name: "Categories"
+      url: "/categories"
+    - name: "About"
+      url: "/about"

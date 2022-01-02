@@ -1,0 +1,11 @@
+<footer>
+    <hr>
+    {{ range .Site.Params.social }}
+    <a class="soc" href="{{ .url }}" title="{{ .name }}"><i data-feather="{{ .icon }}"></i></a>|
+    {{ end }}
+    {{ .Site.Copyright }}
+</footer>
+
+<script>
+    feather.replace()
+</script>

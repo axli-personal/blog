@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+{{ if isset .Data "Term" }}
+<h1>Entries About - "{{ .Data.Term }}"</h1>
+{{ else }}
+<h1 class="page-title">Overview</h1>
+{{ end }}
+
+<ul class="posts">
+  {{ range .Pages }}
+  <li class="post">
+    <a href="{{ .RelPermalink }}">{{.Title}}</a>
+    <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
