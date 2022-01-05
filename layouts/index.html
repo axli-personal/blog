@@ -5,7 +5,8 @@
 <div class="content">
   {{ partial "head.html" . }}
   <main class="list">
-    {{ range .Paginator.Pages }}
+    {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
+    {{ range $paginator.Pages }}
     <section class="list-item">
       <h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
       <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
@@ -15,7 +16,7 @@
       </div>
     </section>
     {{ end }}
-    {{ partial "paginator" .Paginator }}
+    {{ partial "paginator" $paginator }}
   </main>
   {{ partial "footer.html" . }}
 </div>

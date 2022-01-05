@@ -1,6 +1,6 @@
 baseURL: "https://blog.axlis.cn"
-title: "AoXiang Li | Blog"
-copyright: "2021 @ AoXiang Li"
+title: "翱翔的博客小站"
+copyright: "2021 @ 李翱翔"
 
 summaryLength: 30
 hasCJKLanguage: true
@@ -11,7 +11,7 @@ params:
   social:
     - name: "GitHub"
       icon: "github"
-      url: "https://github.com/osung-li"
+      url: "https://github.com/axli-personal"
   nav:
     - name: "Posts"
       url: "/posts"
