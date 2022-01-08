@@ -1,6 +1,6 @@
 ---
 title: "9-用两个栈实现队列"
-date: 2022-01-07T21:16:48+08:00
+date: 2022-01-08T11:42:00+08:00
 tags: ["interview"]
 categories: ["algorithm"]
 summary: "剑指Offer面试题9的归纳"

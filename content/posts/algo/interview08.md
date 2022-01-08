@@ -1,12 +1,10 @@
 ---
-title: "9-二叉树的下一个节点"
-date: 2022-01-05T22:27:24+08:00
+title: "8-二叉树的下一个节点"
+date: 2022-01-08T11:41:00+08:00
 tags: ["interview"]
 categories: ["algorithm"]
 summary: "剑指Offer面试题8的归纳"
 ---
-
-# 二叉树遍历的下一个节点
 
 ## 问题介绍
 
@@ -16,17 +14,19 @@ summary: "剑指Offer面试题8的归纳"
 
 首先我们对最简单的二叉树进行分析.
 
-<img src="https://axlis.oss-cn-hangzhou.aliyuncs.com/note/algo/1.svg" style="margin: 0">
+![8-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/8-1.svg)
 
 然后探讨一些一般情况下没有遇到的一些问题.
 
-<img src="https://axlis.oss-cn-hangzhou.aliyuncs.com/note/algo/2.svg" style="margin: 0">
+![8-2](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/8-2.svg)
 
-<img src="https://axlis.oss-cn-hangzhou.aliyuncs.com/note/algo/3.svg" style="margin: 0">
+![8-3](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/8-3.svg)
 
 最后根据分析写出简洁的实现.
 
 ```cpp
+#include "util/tree.h" // https://github.com/axli-personal/algo
+
 BTNode* inorder_next(const BTNode* current) {
     if (current == nullptr) return nullptr;
 
@@ -50,21 +50,20 @@ BTNode* inorder_next(const BTNode* current) {
     return nullptr;
 }
 
-// 测试有点简单.
 void test() {
-    BTNode root, left, right;
-    root.val  = 1;
-    left.val  = 2;
-    right.val = 3;
+    istringstream in("1 2 4 -1 7 -1 -1 -1 3 5 -1 -1 6 8 -1 -1 -1");
 
-    root.left = &left;
-    root.right = &right;
-    left.parent = &root;
-    right.parent = &root;
+    auto root = BTNode::build(in);
 
-    cout << inorder_next(&root)->val << endl;
-    cout << inorder_next(&left)->val << endl;
-    cout << inorder_next(&right)     << endl;
-    cout << inorder_next(nullptr)    << endl;
+    BTNode::display(root);
+
+    BTNode::print(inorder_next(root));
+    cout << endl;
+    BTNode::print(inorder_next(root->left));
+    cout << endl;
+    BTNode::print(inorder_next(root->right));
+    cout << endl;
+    BTNode::print(inorder_next(nullptr));
+    cout << endl;
 }
 ```

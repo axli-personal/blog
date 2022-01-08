@@ -1,12 +1,10 @@
 ---
-title: "8-重建二叉树"
-date: 2022-01-05T22:27:24+08:00
+title: "7-重建二叉树"
+date: 2022-01-08T11:40:00+08:00
 tags: ["interview"]
 categories: ["algorithm"]
 summary: "剑指Offer面试题7的归纳"
 ---
-
-# 构建二叉树
 
 ## 问题介绍
 
@@ -15,24 +13,27 @@ summary: "剑指Offer面试题7的归纳"
 ## 问题解答
 
 ```cpp
-BinaryTreeNode* construct_binary_tree_core(const int* preorder, const int* inorder, int len) {
+#include "util/tree.h" // https://github.com/axli-personal/algo
+
+BTNode* construct_binary_tree_core(const int* preorder, const int* inorder, int len) {
     if (len == 0) return nullptr;
 
-    int find = -1; // root index in inorder.
+    // 根节点在中序序列中的位置.
+    int find = -1;
     for (int i = 0; i < len; i++) {
         if (preorder[0] == inorder[i]) {
             find = i;
-            break; // stop when find the first one.
+            break; // 找到后停止.
         }
     }
 
-    // handle unpredictable error.
+    // 对于没找到根节点的情况: 抛出异常.
     if (find == -1) {
         throw runtime_error("preorder mismatch with inorder");
     }
 
-    auto root = new BinaryTreeNode();
-    auto skip = find + 1; // for readability.
+    auto root = new BTNode();
+    auto skip = find + 1; // 提高可读性.
 
     root->val   = preorder[0];
     root->left  = construct_binary_tree_core(preorder + 1, inorder, find);
@@ -41,7 +42,7 @@ BinaryTreeNode* construct_binary_tree_core(const int* preorder, const int* inord
     return root;
 }
 
-BinaryTreeNode* construct_binary_tree(const int* preorder, const int* inorder, int len) {
+BTNode* construct_binary_tree(const int* preorder, const int* inorder, int len) {
     if ((preorder == nullptr || inorder == nullptr) && len != 0) {
         throw length_error("nullptr order with nonzero length");
     }
@@ -52,13 +53,12 @@ BinaryTreeNode* construct_binary_tree(const int* preorder, const int* inorder, i
     return construct_binary_tree_core(preorder, inorder, len);
 }
 
-// 这个问题的测试还不是很好进行, 我使用了向控制台展示二叉树的方案.
 void test() {
     int preorder[]{ 1, 2, 4, 7, 3, 5, 6, 8 };
     int inorder[]{ 4, 7, 2, 1, 5, 3, 8, 6 };
 
-    BinaryTreeNode::display(construct_binary_tree(preorder, inorder, 8));
-    BinaryTreeNode::display(construct_binary_tree(nullptr, nullptr, 0));
-    BinaryTreeNode::display(construct_binary_tree(preorder, inorder, -5));
+    BTNode::display(construct_binary_tree(preorder, inorder, 8));
+    BTNode::display(construct_binary_tree(nullptr, nullptr, 0));
+    BTNode::display(construct_binary_tree(preorder, inorder, -5));
 }
 ```
