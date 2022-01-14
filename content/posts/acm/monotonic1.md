@@ -1,14 +1,16 @@
 ---
 title: "单调栈"
 date: 2022-01-12T10:01:28+08:00
-tags: ["Math"]
+tags: ["Monotonic"]
 categories: ["ACM"]
 summary: "基本单调栈知识和典型例题"
 ---
 
 ## 单调栈的定义
 
-单调栈内的元素序列具有单调性, 当有新元素需要添加时, 则需要通过弹出部分元素维持单调性; 大部分情况下, 弹出的元素被直接丢弃.
+单调栈内的元素序列具有单调性, 当有新元素需要添加到栈顶时, 则需要通过弹出部分栈顶元素维持单调性.
+
+我们需要得到的是弹出元素后和添加元素前的栈顶元素; 如果栈顶存放最大元素, 我习惯称作单调递增栈.
 
 ![1-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/acm/monotonic/1-1.svg)
 
@@ -27,15 +29,15 @@ int main() {
     vector<int> res(len);
     for (int i = 0; i < len; i++) cin >> nums[i];
 
-    stack<int> inc; // 单调递增栈.
+    stack<int> dec; // 单调递减栈.
     for (int i = len - 1; i >= 0; i--) {
         // 维持栈的单调性, 丢弃.
-        while (!inc.empty() && nums[inc.top()] <= nums[i]) inc.pop();
+        while (!dec.empty() && nums[dec.top()] <= nums[i]) dec.pop();
         // 栈顶元素就是第一个比它大的元素.
-        if (inc.empty()) res[i] = -1;
-        else             res[i] = inc.top();
+        if (dec.empty()) res[i] = -1;
+        else             res[i] = dec.top();
         // 维持栈的单调性, 添加.
-        inc.push(i);
+        dec.push(i);
     }
 
     for (int i : res) {
@@ -44,7 +46,7 @@ int main() {
 }
 ```
 
-解决问题时, 我们配合单调递增栈倒着找结果; 由于添加的元素比丢弃元素大, 后续遍历结果不可能是丢弃的元素.
+解决问题时, 我们配合单调递减栈倒着找结果; 由于添加的元素比丢弃元素大, 后续遍历结果不可能是丢弃的元素.
 
 ## [问题介绍(二)](https://www.spoj.com/problems/HISTOGRA/)
 
@@ -60,26 +62,26 @@ int main() {
         vector<int> res(len, -1);
         for (int i = 0; i < len; i++) cin >> nums[i];
 
-        stack<int> dec; // 单调递减栈.
+        stack<int> reverse; // 单调递增栈.
         for (int i = len - 1; i >= 0; i--) {
             // 维持栈的单调性, 丢弃.
-            while (!dec.empty() && nums[dec.top()] >= nums[i]) dec.pop();
+            while (!reverse.empty() && nums[reverse.top()] >= nums[i]) reverse.pop();
             // 栈顶元素就是第一个比它小的元素.
-            if (dec.empty()) res[i] += len - i;
-            else             res[i] += dec.top() - i;
+            if (reverse.empty()) res[i] += len - i;
+            else             res[i] += reverse.top() - i;
             // 维持栈的单调性, 添加.
-            dec.push(i);
+            reverse.push(i);
         }
 
-        stack<int> inc; // 单调递减栈.
+        stack<int> forward; // 单调递增栈.
         for (int i = 0; i < len; i++) {
             // 维持栈的单调性, 丢弃.
-            while (!inc.empty() && nums[inc.top()] >= nums[i]) inc.pop();
+            while (!forward.empty() && nums[forward.top()] >= nums[i]) forward.pop();
             // 栈顶元素就是第一个比它小的元素.
-            if (inc.empty()) res[i] += i - (-1);
-            else             res[i] += i - inc.top();
+            if (forward.empty()) res[i] += i - (-1);
+            else             res[i] += i - forward.top();
             // 维持栈的单调性, 添加.
-            inc.push(i);
+            forward.push(i);
         }
 
         long long area = (long long)res[0] * (long long)nums[0];
