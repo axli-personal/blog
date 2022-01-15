@@ -71,7 +71,7 @@ ul li {
 }
 
 ul li::before {
-    content: '* ';
+    content: '🔸 ';
     font-weight: bold;
 }
 
@@ -216,7 +216,7 @@ article .title {
 }
 
 .tags li::before {
-    content: "🏷 ";
+    content: "🏷️ ";
 }
 
 .tags a {
