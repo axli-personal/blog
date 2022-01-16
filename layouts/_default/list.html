@@ -1,17 +1,21 @@
 {{ define "main" }}
 
 {{ if isset .Data "Term" }}
-<h1>Entries About - "{{ .Data.Term }}"</h1>
+<h1>Posts About - {{ .Data.Term }}</h1>
 {{ else }}
-<h1 class="page-title">Overview</h1>
+<h1 class="page-title">All Posts</h1>
 {{ end }}
 
+{{ range .Pages.GroupByPublishDate "2006" }}
+<h2>{{ .Key }}</h2>
 <ul class="posts">
   {{ range .Pages }}
   <li class="post">
+    <span class="meta">{{ dateFormat "Jan 02" .Date }}</span>
+    <span>&nbsp;</span>
     <a href="{{ .RelPermalink }}">{{.Title}}</a>
-    <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}</span>
   </li>
   {{ end }}
 </ul>
+{{ end }}
 {{ end }}
