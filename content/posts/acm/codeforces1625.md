@@ -3,7 +3,7 @@ title: "Codeforces Round #765 (Div. 2)"
 date: 2022-01-15T19:18:46+08:00
 tags: ["Codeforces"]
 categories: ["ACM"]
-summary: ""
+summary: "日常比赛"
 ---
 
 ## [A - Ancient Civilization](https://codeforces.com/contest/1625/problem/A)
