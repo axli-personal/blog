@@ -1,6 +1,6 @@
 baseURL: "https://blog.axlis.cn"
-title: "翱翔的博客小站"
-copyright: "2021 @ 李翱翔"
+title: "Axlis ~ Blog"
+copyright: "Copyright 2021-present AoXiang Li"
 
 summaryLength: 30
 hasCJKLanguage: true
@@ -21,3 +21,7 @@ params:
       url: "/categories"
     - name: "About"
       url: "/about"
+
+markup:
+  highlight:
+    style: github

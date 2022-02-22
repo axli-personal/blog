@@ -1,30 +1,48 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Code");
-
 :root {
     --maincolor: #aba2a2;
     --hovercolor: #797979;
 }
 
-html {
+body {
     color: #232333;
     font-size: 15px;
     line-height: 1.6em;
-    font-family: "Fira Code", monospace;
+    font-family: "Fira Code", "Courier New";
 }
 
-body {
-    display: block;
-    margin: 8px;
+/* Containers */
+.content {
+    margin: 2em auto;
+    max-width: 90%;
+    padding: 0 1ch;
+    word-wrap: break-word;
+}
+
+/* Header */
+#header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+    #header {
+        flex-direction: column;
+    }
+    #home {
+        margin-bottom: 0.8em;
+    }
 }
 
 ::selection {
-    background: var(--maincolor);
-    color: #fff;
+    background: rgb(128, 241, 241);
 }
 
 /* Table */
 table {
-    box-shadow: 2px 2px 3px rgb(0 0 0 / 13%);
+    box-shadow: 2px 2px 3px #00000021;
     border-spacing: 0;
 }
 
@@ -57,8 +75,7 @@ a {
 }
 
 a:hover {
-    background-color: var(--hovercolor);
-    color: #fff;
+    border-bottom: 3px solid #4fc08d;
 }
 
 ul {
@@ -116,15 +133,10 @@ code {
 }
 
 pre {
-    background-color: #ececec;
+    border: 3px solid #ececec;
     line-height: 1.4;
     overflow-x: auto;
     padding: 1em;
-}
-
-.highlight pre ::selection {
-    background: rgba(255, 255, 255, 0.2);
-    color: inherit;
 }
 
 pre code {
@@ -134,31 +146,9 @@ pre code {
     background-color: transparent;
 }
 
-/* Containers */
-.content {
-    margin-bottom: 4em;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 90%;
-    padding: 0 1ch;
-    word-wrap: break-word;
-}
-
-/* Header */
-header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 1em 0;
-}
-
-header .main {
-    font-size: 1.5rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
     font-size: 1.2rem;
-    margin-top: 2em;
+    margin: 1.4em 0 0.5em 0;
 }
 
 h1::before {
@@ -210,32 +200,9 @@ article .title {
     margin-bottom: 1em;
 }
 
-.site-description {
-    display: flex;
-    justify-content: space-between;
-}
-
 .tags li::before {
     content: "🏷️ ";
 }
-
-.tags a {
-    border-bottom: 3px solid var(--maincolor);
-}
-
-.tags a:hover {
-    color: white;
-    background-color: var(--hovercolor);
-}
-
-svg {
-    max-height: 15px;
-}
-
-.soc:hover {
-    color: white;
-}
-
 
 .highlight {
     position: relative;
