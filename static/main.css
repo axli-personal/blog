@@ -3,19 +3,24 @@
     --hovercolor: #797979;
 }
 
-body {
-    color: #232333;
-    font-size: 15px;
-    line-height: 1.6em;
-    font-family: "Fira Code", "Courier New";
+html {
+    font-size: 16px; /* base font size */
+    text-size-adjust: none; /* disalbe font adjust in mobile */
+    -webkit-text-size-adjust: none; /* vendor prefix for compatibility */
 }
 
-/* Containers */
-.content {
-    margin: 2em auto;
-    max-width: 90%;
-    padding: 0 1ch;
+body {
+    margin: 0; /* remove user agent style */
     word-wrap: break-word;
+    color: #232333;
+    line-height: 1.6rem;
+    font-family: "Fira Code", monospace;
+}
+
+.container {
+    margin:    auto;
+    padding:   30px;
+    max-width: 1100px;
 }
 
 /* Header */
@@ -24,16 +29,6 @@ body {
     justify-content: space-between;
     font-weight: bold;
     font-size: 1.4rem;
-}
-
-/* Mobile */
-@media screen and (max-width: 700px) {
-    #header {
-        flex-direction: column;
-    }
-    #home {
-        margin-bottom: 0.8em;
-    }
 }
 
 ::selection {
