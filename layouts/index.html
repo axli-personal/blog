@@ -4,20 +4,18 @@
 <body>
 <div class="container">
   {{ partial "head.html" . }}
-  <div class="list">
+  <section class="main-entry">
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
     {{ range $paginator.Pages }}
-    <section class="list-item">
-      <h1 class="title"><a href="{{ .RelPermalink }}">{{.Title}}</a></h1>
+    <article class="article-entry">
+      <header>{{.Title}}</header>
+      <div class="summary">{{ .Summary }}</div>
       <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
-      <br>
-      <div class="description">
-        {{ .Summary }}
-      </div>
-    </section>
+      <a class="link" href="{{ .RelPermalink }}"></a>
+    </article>
     {{ end }}
     {{ partial "paginator" $paginator }}
-  </div>
+  </section>
   {{ partial "footer.html" . }}
 </div>
 </body>

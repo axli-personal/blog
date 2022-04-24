@@ -1,10 +1,8 @@
-<footer>
+<footer class="main-footer">
     <hr>
-    <strong>
     {{ range .Site.Params.social }}
     <a href="{{ .url }}">{{ .name }}</a>
     |
     {{ end }}
     {{ .Site.Copyright }}
-    </strong>
 </footer>

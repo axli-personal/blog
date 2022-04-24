@@ -1,13 +1,9 @@
-<div class="pagination">
-    {{ if .HasPrev }}
-    <span class="page-item page-prev">
-        <a href="{{ .Prev.URL }}" class="page-link" aria-label="Previous"><span>← Prev</span></a>
-    </span>
-    {{ end }}
+<footer class="pagination">
+  {{ if .HasPrev }}
+    <a href="{{ .Prev.URL }}" class="page-link">Previous Page</a>
+  {{ end }}
 
-    {{ if .HasNext }}
-    <span class="page-item page-next">
-        <a href="{{ .Next.URL }}" class="page-link" aria-label="Next"><span>Next →</span></a>
-    </span>
-    {{ end }}
-</div>
+  {{ if .HasNext }}
+    <a href="{{ .Next.URL }}" class="page-link page-next">Next Page</a>
+  {{ end }}
+</footer>
