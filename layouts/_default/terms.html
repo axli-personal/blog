@@ -1,14 +1,16 @@
 {{ define "main" }}
+  <header class="section-page-title">
+    All {{ .Title }}
+  </header>
 
-<h1 class="page-title">All {{ .Title }}</h1>
-
-<ul class="terms">
-  {{ range .Data.Terms.ByCount }}
-  <li class="term">
-    <span>{{ printf "(x%02d)" .Count }}</span>
-    <span>&nbsp;</span>
-    <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> 
-  </li>
-  {{ end }}
-</ul>
+  <ul class="section-page-list">
+    {{ range .Data.Terms.ByCount }}
+    <li class="section-page-item">
+      <a class="link-hover" href="{{ .Page.Permalink }}">
+        {{ .Page.Title }}
+      </a>
+      <span>{{ print .Count }} posts</span>
+    </li>
+    {{ end }}
+  </ul>
 {{ end }}

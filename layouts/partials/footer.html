@@ -1,7 +1,7 @@
 <footer class="main-footer">
     <hr>
     {{ range .Site.Params.social }}
-    <a href="{{ .url }}">{{ .name }}</a>
+    <a class="link-hover" href="{{ .url }}">{{ .name }}</a>
     |
     {{ end }}
     {{ .Site.Copyright }}

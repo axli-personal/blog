@@ -1,21 +1,23 @@
 {{ define "main" }}
+  <header class="section-page-title">
+    {{ if isset .Data "Term" }}
+      Posts About - {{ .Data.Term }}
+    {{ else }}
+      All Posts
+    {{ end }}
+  </header>
 
-{{ if isset .Data "Term" }}
-<h1>Posts About - {{ .Data.Term }}</h1>
-{{ else }}
-<h1 class="page-title">All Posts</h1>
-{{ end }}
-
-{{ range .Pages.GroupByPublishDate "2006" }}
-<h2>{{ .Key }}</h2>
-<ul class="posts">
-  {{ range .Pages }}
-  <li class="post">
-    <span class="meta">{{ dateFormat "Jan 02" .Date }}</span>
-    <span>&nbsp;</span>
-    <a href="{{ .RelPermalink }}">{{.Title}}</a>
-  </li>
+  {{ range .Pages.GroupByPublishDate "2006" }}
+    <div class="list-page-year">{{ .Key }}</div>
+    <ul class="section-page-list">
+      {{ range .Pages }}
+        <li class="section-page-item">
+          <a class="link-hover" href="{{ .RelPermalink }}">
+            {{.Title}}
+          </a>
+          <time>{{ dateFormat "Jan 02" .Date }}</time>
+        </li>
+      {{ end }}
+    </ul>
   {{ end }}
-</ul>
-{{ end }}
 {{ end }}

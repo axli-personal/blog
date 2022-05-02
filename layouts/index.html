@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-{{ partial "header.html" . }}
+{{ partial "head.html" . }}
 <body>
 <div class="container">
-  {{ partial "head.html" . }}
+  {{ partial "header.html" . }}
   <section class="main-entry">
     {{ $paginator := .Paginate (where .Site.RegularPages "Type" "==" "posts") }}
     {{ range $paginator.Pages }}
     <article class="article-entry">
       <header>{{.Title}}</header>
-      <div class="summary">{{ .Summary }}</div>
+      <div class="markdown summary">{{ .Summary }}</div>
       <time>{{ dateFormat "Jan 2, 2006" .Date }}</time>
       <a class="link" href="{{ .RelPermalink }}"></a>
     </article>

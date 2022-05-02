@@ -1,10 +1,12 @@
-<header class="main-header">
-  <div id="home">
-    <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-  </div>
-  <div>
-    {{ range .Site.Params.nav }}
-    <a href="{{ .url }}">{{ .name }}</a>
-    {{ end }}
-  </div>
-</header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1160">
+
+  <title>{{ .Title }} {{ if not .IsHome }} - {{ .Site.Title }} {{ end }}</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Code">
+  <link rel="icon"       href="{{ .Site.Params.favicon }}">
+  <link rel="stylesheet" href="/main.css">
+
+  {{ partial "math.html" }}
+</head>

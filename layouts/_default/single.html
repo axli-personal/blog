@@ -1,26 +1,16 @@
 {{ define "main" }}
-<main>
-  <article class="article-content">
-    <div class="title">
-      <h1 class="title">{{ .Title }}</h1>
-      <div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}</div>
-    </div>
+  <article>
+    <header class="single-page-title">
+      <span>{{ .Title }}</span>
+      <time>{{ dateFormat "January 2, 2006" .Date }}</time>
+    </header>
 
-    <section class="body">
-      {{ .Content }}
-    </section>
+    <div class="markdown">{{ .Content }}</div>
 
-    <div class="post-tags">
-      <nav class="nav tags">
-        <ul class="tags">
-          {{ range .Params.tags }}
-          <li>
-            <a href="/tags/{{ . | urlize }}">{{ . }}</a>
-          </li>
-          {{ end }}
-        </ul>
-      </nav>
-    </div>
+    <ul class="single-page-tags">
+      {{ range .Params.tags }}
+      <li><a class="link-hover" href="/tags/{{ . | urlize }}">{{ . }}</a></li>
+      {{ end }}
+    </ul>
   </article>
-</main>
 {{ end }}
