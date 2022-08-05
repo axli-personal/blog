@@ -23,5 +23,8 @@ params:
       url: "/about"
 
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     style: github
