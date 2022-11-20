@@ -7,7 +7,7 @@ summary: "Wireless Networking"
 ## Wireless is different
 
 * Signal weakens with distance.
-* Obstructions can futher weaken signal.
+* Obstructions can further weaken signal.
 * Signal strength changes over time.
 * Wireless signal can reflect (Mutipath).
 * Interference from other transmitters (Unlicensed frequency band).
