@@ -2,7 +2,7 @@
 title: "13-机器人运动范围"
 date: 2022-02-10T15:39:13+08:00
 tags: ["interview"]
-categories: ["algorithm"]
+categories: ["Algorithm"]
 summary: "剑指Offer面试题13的归纳"
 ---
 
