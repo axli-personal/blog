@@ -7,30 +7,28 @@ summary: "Application Layer"
 
 ## HTTP
 
-### Status Code
+### 状态码
 
-#### 301: Moved Permanently
-
-#### 302: Found
-
-#### 400: Bad Request
-
-#### 403: Forbidden
-
-* Not have sufficient access to perform action.
-* Not have sufficient privilege to perform action.
-
-#### 404: Not Found
+* 1xx: 提示信息
+* 2xx: 成功 
+* 3xx: 重定向, 301(Moved Permanently), 302(Found).
+* 4xx: 客户端错误, 400(Bad Request), 403(Forbidden), 404(Not Found).
+* 5xx: 服务端错误
 
 ### HTTP/1.1
 
-* Request pipelining.
+* 长连接: 改善了短连接造成的性能开销.
 
 ### HTTP/2
 
-* Break down message into frames, schedule frames to mitigate head-of-line blocking.
-* Allows each stream to have an associated weight and dependency.
-* Push unrequested objects to client.
-* Efficient coding for HTTP fields.
-* All header field names are lowercase.
-* Request line is split into individual `:method`, `:scheme`, `:authority`, and `:path` pseudo-header fields.
+* 头部压缩：头信息表.
+* 二进制格式：头信息和数据体都是二进制, 并且统称为帧.
+* 并发传输：多个Stream复用在一条TCP连接, 缓解了队头阻塞.
+
+### HTTP/3
+
+* 无队头阻塞: Stream之间并没有依赖, 某个Stream发生丢包了, 只会影响该流.
+
+## RPC
+
+传输内容: 可以采用其他协议保存结构体数据, 同时不需要考虑浏览器行为, 性能好.

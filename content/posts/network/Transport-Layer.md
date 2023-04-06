@@ -1,12 +1,52 @@
 ---
 title: "Transport Layer"
 date: 2022-07-09T12:00:00+08:00
+categories: ["Network"]
 summary: "Transport Layer"
 ---
 
-## Congestion Control
+## UDP特性
 
-### Cause
+* 无需连接: 即刻传输数据.
+* 尽力而为: 有消息边界, 但可能丢包、乱序.
+
+## TCP特性
+
+* 面向连接: 建立连接、断开连接.
+* 字节流: 无消息边界, 特殊字符定义消息边界.
+
+## 建立连接
+
+第一次握手：客户端发送网络包，服务端收到了。服务端得出结论：客户端的发送能力、服务端的接收能力是正常的。
+
+第二次握手：服务端发包，客户端收到了。客户端得出结论：服务端的接收、发送能力，客户端的接收、发送能力是正常的。不过此时服务器并不能确认客户端的接收能力是否正常。
+
+第三次握手：客户端发包，服务端收到了。服务端得出结论：客户端的接收、发送能力正常，服务器自己的发送、接收能力也正常。
+
+三次握手能防止历史连接的建立，能减少双方不必要的资源开销，能帮助双方同步初始化序列号
+
+不使用「两次握手」和「四次握手」的原因：
+
+「两次握手」：无法防止历史连接的建立，会造成双方资源的浪费，也无法可靠的同步双方序列号；
+「四次握手」：三次握手就已经理论上最少可靠连接建立，所以不需要使用更多的通信次数。
+
+## 断开连接
+
+服务端在收到FIN时, 接受缓冲区末尾会插入EOF; 等到服务端数据发送完毕, 调用关闭连接的函数时, 才会发送FIN.
+
+## 可靠传输
+
+* 超时重传: Smoothed RTT, RTT Variation.
+* 快速重传: 收到重复ACK.
+
+## 高速传输
+
+* 滑动窗口: 累积确认.
+* 窗口关闭: 接收方停止接受新的数据, 带窗口大小改变时通知发送方, 发送方定期探测.
+
+## 拥塞控制
+
+### 原因
 
 Retransmission: finite buffer, timeout.
 
@@ -14,31 +54,9 @@ Upstream transmission **capacity wasted** for packets lost downstream.
 
 ![2](https://oos.axlis.cn/blog/network/2.png)
 
-## Compute RTO
+## 实现
 
-> RTO: retransmission timeout
-> 
-> SRTT: smoothed round-trip time
-> 
-> RTTVAR: round-trip time variation
-
-When the first RTT measurement R is made:
-
-```
-SRTT = R
-RTTVAR = R / 2
-RTO = SRTT + K * RTTVAR
-```
-
-When a subsequent RTT measurement R' is made:
-
-```
-RTTVAR = (1 - beta) * RTTVAR + beta * |SRTT - R'|
-SRTT = (1 - alpha) * SRTT + alpha * R'
-```
-
-The value of SRTT used in the update to RTTVAR is its value before updating SRTT itself.
-
-Suggested: `k = 4, alpha = 1 / 8, beta = 1 / 4`.
-
-Reference: [RFC6298](https://www.rfc-editor.org/rfc/rfc6298.html)
+* 慢启动: 受到ACK时, 拥塞窗口递增.
+* 拥塞避免: 到达上一轮拥塞窗口大小一半时, 拥塞窗口随时间线性增加.
+* 重复ACK: 拥塞窗口减半, 进入用赛避免状态.
+* 超时: 重新进入满启动阶段.
