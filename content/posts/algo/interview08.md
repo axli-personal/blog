@@ -14,13 +14,13 @@ summary: "剑指Offer面试题8的归纳"
 
 首先我们对最简单的二叉树进行分析.
 
-![8-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/8-1.svg)
+![8-1](https://dl.axlis.cn/blog/interview/8-1.svg)
 
 然后探讨一些一般情况下没有遇到的一些问题.
 
-![8-2](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/8-2.svg)
+![8-2](https://dl.axlis.cn/blog/interview/8-2.svg)
 
-![8-3](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/8-3.svg)
+![8-3](https://dl.axlis.cn/blog/interview/8-3.svg)
 
 最后根据分析写出简洁的实现.
 

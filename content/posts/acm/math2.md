@@ -39,7 +39,7 @@ long long sum(int n) {
 
 ## [问题解答(二)](https://codeforces.com/contest/1542/submission/143488966)
 
-![2-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/acm/math/2-1.jpg)
+![2-1](https://dl.axlis.cn/blog/acm/math/2-1.jpg)
 
 ```c++
 const int LIMIT = 42;

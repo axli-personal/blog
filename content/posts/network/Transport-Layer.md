@@ -52,7 +52,7 @@ Retransmission: finite buffer, timeout.
 
 Upstream transmission **capacity wasted** for packets lost downstream.
 
-![2](https://oos.axlis.cn/blog/network/2.png)
+![2](https://dl.axlis.cn/blog/network/2.png)
 
 ## 实现
 

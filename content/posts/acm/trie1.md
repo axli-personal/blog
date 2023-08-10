@@ -14,7 +14,7 @@ summary: "单词查找树是一种已知字符集的字符串查找树"
 
 假定字符集为{x, y, z}, 节点相应位置为0表示绝对没有以其结尾的字符串.
 
-![1-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/acm/trie/1-1.png)
+![1-1](https://dl.axlis.cn/blog/acm/trie/1-1.png)
 
 ## 填充状态
 
@@ -22,7 +22,7 @@ summary: "单词查找树是一种已知字符集的字符串查找树"
 
 该表示法通过索引值表示链接关系, 展开后就是一个度为字符集大小的查找树.
 
-![1-2](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/acm/trie/1-2.png)
+![1-2](https://dl.axlis.cn/blog/acm/trie/1-2.png)
 
 ## 具体实现
 

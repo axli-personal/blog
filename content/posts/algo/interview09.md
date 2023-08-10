@@ -14,7 +14,7 @@ summary: "剑指Offer面试题9的归纳"
 
 一个栈专门用作输入, 一个栈专门用作输出, 输出栈为空时需要从输入栈获取元素.
 
-![9-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/interview/9-1.svg)
+![9-1](https://dl.axlis.cn/blog/interview/9-1.svg)
 
 ```c++
 template<typename T>

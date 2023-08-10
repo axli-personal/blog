@@ -99,7 +99,7 @@ If a cycle is found, we will abort a transaction to break the cycle.
 
 ### Compatibility Matrix
 
-![Compatibility Matrix](https://oos.axlis.cn/blog/db/1.png)
+![Compatibility Matrix](https://dl.axlis.cn/blog/db/1.png)
 
 ### Rules
 

@@ -8,7 +8,7 @@ summary: "Chain replication, server crash, server join and split object across m
 
 ## Chain Replication
 
-![Chain Replication Example](https://oos.axlis.cn/blog/ds/3.png)
+![Chain Replication Example](https://dl.axlis.cn/blog/ds/3.png)
 
 * Client RPC split between head and tail.
 * Head only send update RPC to the next server.
@@ -26,4 +26,4 @@ Copy tail and switch tail.
 
 ## Split Object Across Many Chains
 
-![Many Chains Example](https://oos.axlis.cn/blog/ds/4.png)
+![Many Chains Example](https://dl.axlis.cn/blog/ds/4.png)

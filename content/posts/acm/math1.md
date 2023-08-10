@@ -37,7 +37,7 @@ int main() {
 
 ## 欧拉筛
 
-![1-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/acm/math/1-1.svg)
+![1-1](https://dl.axlis.cn/blog/acm/math/1-1.svg)
 
 ```c++
 vector<int> euler_prime(int bound) {

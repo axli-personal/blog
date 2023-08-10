@@ -18,7 +18,7 @@ summary: "FaRM's Background, Feature, Structure and Optimistic Concurrency Contr
 
 ## Structure
 
-![Structure](https://oos.axlis.cn/blog/ds/8.png)
+![Structure](https://dl.axlis.cn/blog/ds/8.png)
 
 ## Optimistic Concurrency Control
 

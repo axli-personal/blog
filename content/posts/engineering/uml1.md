@@ -9,7 +9,7 @@ categories: ["Engineering"]
 ## 基本元素
 
 
-![1](https://oos.axlis.cn/blog/engineering/uml/1-1.png)
+![1](https://dl.axlis.cn/blog/engineering/uml/1-1.png)
 
 * 抽象类和抽象方法采用斜体表示.
 * 接口采用`<<interface>>`表示.

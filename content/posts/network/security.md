@@ -6,7 +6,7 @@ summary: "通信威胁, 密码系统, RSA算法"
 
 ## 通信威胁
 
-![1](https://oos.axlis.cn/blog/network/1.png)
+![1](https://dl.axlis.cn/blog/network/1.png)
 
 * Eve(被动): 捕获通信过程中的流量, 并进行分析.
 * Mallory(主动): 篡改通信过程中的信息, 伪装成通信者进行通信.

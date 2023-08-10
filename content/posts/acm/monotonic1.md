@@ -12,7 +12,7 @@ summary: "基本单调栈知识和典型例题"
 
 我们需要得到的是弹出元素后和添加元素前的栈顶元素; 如果栈顶存放最大元素, 我习惯称作单调递增栈.
 
-![1-1](https://axlis.oss-cn-hangzhou.aliyuncs.com/blog/acm/monotonic/1-1.svg)
+![1-1](https://dl.axlis.cn/blog/acm/monotonic/1-1.svg)
 
 ## [问题介绍(一)](https://www.luogu.com.cn/problem/P5788)
 

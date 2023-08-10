@@ -4,7 +4,7 @@ copyright: "Copyright 2021-present AoXiang Li"
 
 summaryLength: 30
 hasCJKLanguage: true
-paginate: 5
+paginate: 10
 
 params:
   favicon: "/favicon.jpg"

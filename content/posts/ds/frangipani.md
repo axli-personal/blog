@@ -8,7 +8,7 @@ summary: "Frangipani's structure, use case, cache consistency and recovery."
 
 ## Structure
 
-![Structure](https://oos.axlis.cn/blog/ds/5.png)
+![Structure](https://dl.axlis.cn/blog/ds/5.png)
 
 ## Use Case
 
@@ -32,10 +32,10 @@ Lock table (user1):
 | file1 | busy  |
 | file2 | idle  |
 
-![Example](https://oos.axlis.cn/blog/ds/6.png)
+![Example](https://dl.axlis.cn/blog/ds/6.png)
 
 ## Recovery
 
-![Many Logs](https://oos.axlis.cn/blog/ds/7.png)
+![Many Logs](https://dl.axlis.cn/blog/ds/7.png)
 
 > Only replay update records with current version of the block.
