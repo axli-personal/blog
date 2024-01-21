@@ -3,6 +3,12 @@ title: "ElasticSearch - 查询结果的相关度"
 date: 2024-01-20T11:00:00+08:00
 ---
 
+# 思维导图
+
+![Xmind Graph](https://dl.axlis.cn/blog/es/relevancy.png)
+
+> [下载Xmind文件](https://dl.axlis.cn/blog/es/relevancy.xmind)
+
 # 与关系型数据库的对比
 
 所有存储引擎都能够处理查找文档/记录的请求.
