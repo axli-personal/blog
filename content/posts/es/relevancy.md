@@ -1,6 +1,8 @@
 ---
 title: "ElasticSearch - 查询结果的相关度"
 date: 2024-01-20T11:00:00+08:00
+categories: ["ElasticSearch"]
+summary: "分数/相关度是如何计算的、Boosting、对分数/相关性进行解释、通过Rescore降低查询的开销、使用更强大的function_score等"
 ---
 
 # 思维导图
@@ -8,6 +10,18 @@ date: 2024-01-20T11:00:00+08:00
 ![Xmind Graph](https://dl.axlis.cn/blog/es/relevancy.png)
 
 > [下载Xmind文件](https://dl.axlis.cn/blog/es/relevancy.xmind)
+
+# 视频讲解
+
+<iframe
+    src="//player.bilibili.com/player.html?aid=924123263&bvid=BV1xT4y1b764&cid=1414621957&p=1"
+    scrolling="no"
+    width="100%"
+    height="700px"
+    border="0"
+    frameborder="no"
+    framespacing="0"
+    allowfullscreen="true"></iframe>
 
 # 与关系型数据库的对比
 
