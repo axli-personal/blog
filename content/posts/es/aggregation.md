@@ -2,10 +2,14 @@
 title: "ElasticSearch - 聚合"
 date: 2024-01-23T10:00:00+08:00
 categories: ["ElasticSearch"]
-summary: "草稿, 预计2024/1/24前完成"
+summary: "聚合的执行过程、指标型聚合、分桶型聚合、聚合的嵌套"
 ---
 
 # 聚合的执行过程
+
+![Aggregation Process](https://dl.axlis.cn/blog/es/aggregation-process.png)
+
+> [下载Draw.io文件](https://dl.axlis.cn/blog/es/aggregation-process.drawio)
 
 # 指标型聚合
 
@@ -45,7 +49,7 @@ summary: "草稿, 预计2024/1/24前完成"
 1. 使用`terms`聚合根据`category`进行分桶, 使用`size`限制桶的数量, 默认按桶内文档数排序.
 2. 使用`top_hits`聚合(嵌套)从每个桶内取购买量最多的商品, 用`sort`指定排序规则, 用`size`限制每个桶内文档数.
 
-最终可以得到一下查询:
+最终可以得到以下查询:
 
 ```json
 {
@@ -69,3 +73,9 @@ summary: "草稿, 预计2024/1/24前完成"
   }
 }
 ```
+
+## 单桶聚合
+
+1. 可以创建一个`global`聚合作为需要执行的聚合的parent, 这样需要执行的聚合的输入就会变为全部文档.
+2. 可以创建一个`filter`聚合作为需要执行的聚合的parent, 这样就可以不影响query的结果, 仅为需要执行的聚合过滤文档.
+3. 可以创建一个`missing`聚合, 这样就可以得到字段缺失的桶.
