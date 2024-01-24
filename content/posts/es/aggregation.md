@@ -5,6 +5,12 @@ categories: ["ElasticSearch"]
 summary: "聚合的执行过程、指标型聚合、分桶型聚合、聚合的嵌套"
 ---
 
+# 思维导图
+
+![Aggregation](https://dl.axlis.cn/blog/es/aggregation.png)
+
+> [下载Xmind文件](https://dl.axlis.cn/blog/es/aggregation.xmind)
+
 # 聚合的执行过程
 
 ![Aggregation Process](https://dl.axlis.cn/blog/es/aggregation-process.png)
