@@ -79,3 +79,7 @@ summary: "聚合的执行过程、指标型聚合、分桶型聚合、聚合的�
 1. 可以创建一个`global`聚合作为需要执行的聚合的parent, 这样需要执行的聚合的输入就会变为全部文档.
 2. 可以创建一个`filter`聚合作为需要执行的聚合的parent, 这样就可以不影响query的结果, 仅为需要执行的聚合过滤文档.
 3. 可以创建一个`missing`聚合, 这样就可以得到字段缺失的桶.
+
+# 参考资料
+
+1. ElasticSearch In Action (English Version)
