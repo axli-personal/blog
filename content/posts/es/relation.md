@@ -5,6 +5,12 @@ categories: ["ElasticSearch"]
 summary: "对象模型、一对多解决方案、多对多解决方案"
 ---
 
+# 思维导图
+
+![Relation](https://dl.axlis.cn/blog/es/relation.png)
+
+> [下载Xmind文件](https://dl.axlis.cn/blog/es/relation.xmind)
+
 # 对象模型
 
 ES 看起来和 MongoDB 类似, 都使用对象作为存储模型, 但其底层的索引方式有很大的区别.
