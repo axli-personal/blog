@@ -97,3 +97,7 @@ ES 看起来和 MongoDB 类似, 都使用对象作为存储模型, 但其底层�
 ## 应用层 JOIN
 
 如果你不关注查询性能, 你可以通过 ID 的方式维护引用, 并在应用层进行多次查询, 最后自己 JOIN 数据.
+
+# 参考资料
+
+1. ElasticSearch In Action (English Version)
